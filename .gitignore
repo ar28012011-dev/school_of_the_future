@@ -1,0 +1,11 @@
+# Локальные и временные файлы
+.playwright-cli/
+output/playwright/
+
+# Системные файлы
+Thumbs.db
+.DS_Store
+
+# Редакторы
+.vscode/
+.idea/
