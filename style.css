@@ -122,3 +122,42 @@ body.lightbox-locked{overflow:hidden}
 body.article-lightbox-locked{overflow:hidden}
 @media(max-width:720px){.article-gallery{grid-template-columns:1fr}.article>p{font-size:16px}.article .article-lead{font-size:19px}}
 @media(max-width:600px){.article-lightbox{padding:14px}.article-lightbox-nav{width:44px;height:44px;font-size:28px}.article-lightbox-nav.prev{left:8px}.article-lightbox-nav.next{right:8px}.article-lightbox-close{top:12px;right:12px;width:42px;height:42px;font-size:22px}}
+
+/* Theme switch in the header: one compact button, dark theme is the default. */
+.theme-toggle{display:grid;place-items:center;flex:0 0 auto;width:38px;height:38px;padding:0;border:1px solid var(--line);border-radius:11px;background:transparent;color:var(--muted);cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.theme-toggle:hover{background:#eaf7fc;border-color:#9bd3e3;color:var(--blue-deep)}
+.theme-toggle svg{width:18px;height:18px}
+@media(max-width:720px){.theme-toggle{order:-1;width:36px;height:36px}}
+
+/* Theme switch fades colours instead of snapping, but only while the toggle runs. */
+@media(prefers-reduced-motion:no-preference){html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:background-color .38s ease,color .38s ease,border-color .38s ease,box-shadow .38s ease,fill .38s ease!important}}
+
+/* Dark theme: cosmic surfaces for the whole site, hero and page heroes already dark. */
+[data-theme="dark"]{color-scheme:dark;--paper:#071523;--ink-2:#c9dae6;--muted:#93a8b9;--line:rgba(255,255,255,.12);--blue-deep:#5ccdf0;--lime-deep:#b8e51b;--text:#e8f2f8;--surface:#0e2131;--surface-2:#0a1a2a}
+[data-theme="dark"] body{background:var(--paper);color:var(--text)}
+[data-theme="dark"] .site-header{background:rgba(7,21,35,.92);border-bottom-color:var(--line)}
+[data-theme="dark"] .nav-menu a:hover,[data-theme="dark"] .nav-menu a.active{background:rgba(37,183,227,.16);color:#8ce4ff}
+[data-theme="dark"] .nav-menu a.nav-cta{background:#123a52;color:#eaf6ff}
+[data-theme="dark"] .nav-menu a.nav-cta:hover{background:var(--blue)}
+[data-theme="dark"] .theme-toggle{border-color:rgba(255,255,255,.16);color:#8ce4ff}
+[data-theme="dark"] .theme-toggle:hover{background:rgba(37,183,227,.16);border-color:rgba(37,183,227,.5)}
+[data-theme="dark"] .section.band,[data-theme="dark"] .content-section.band{background:var(--surface-2)}
+[data-theme="dark"] .section.soft-blue{background:#0c2130}
+[data-theme="dark"] .student-card,[data-theme="dark"] .teacher-card,[data-theme="dark"] .info-card,[data-theme="dark"] .news-card,[data-theme="dark"] .article-gallery figure,[data-theme="dark"] .album-chip,[data-theme="dark"] .game-card{background:var(--surface);border-color:var(--line);box-shadow:0 7px 22px rgba(0,0,0,.3)}
+[data-theme="dark"] .student-photo{background:linear-gradient(135deg,#12374b,#172a3b)}
+[data-theme="dark"] .student-action b,[data-theme="dark"] .album-chip .album-count{background:rgba(37,183,227,.18);color:#8ce4ff}
+[data-theme="dark"] .placeholder-mark{background:rgba(184,229,27,.16)}
+[data-theme="dark"] .tag{background:rgba(184,229,27,.14)}
+[data-theme="dark"] .memory-card{background:#102433}
+[data-theme="dark"] .placeholder{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.18)}
+[data-theme="dark"] .profile-photo{background:#102433}
+[data-theme="dark"] .notice{background:#0d2233}
+[data-theme="dark"] .site-footer{background:#061320}
+[data-theme="dark"] .achievement-card:nth-child(2){background:#0f4d6b}
+[data-theme="dark"] .album-chip:hover{border-color:var(--blue-deep);box-shadow:0 8px 18px rgba(0,0,0,.35)}
+[data-theme="dark"] .album-chip.active{background:var(--blue-deep);border-color:var(--blue-deep);color:#04212e;box-shadow:0 12px 26px rgba(0,0,0,.35)}
+[data-theme="dark"] .album-chip.active .album-count{background:#04212e;color:#8ce4ff}
+[data-theme="dark"] .article>p{color:#cfe0ec}
+[data-theme="dark"] .article .article-lead,[data-theme="dark"] .article-gallery figcaption{color:var(--text)}
+[data-theme="dark"] .news-card h2,[data-theme="dark"] .game-card h2,[data-theme="dark"] .student-name,[data-theme="dark"] .teacher-card h3,[data-theme="dark"] .info-card h3{color:var(--text)}
+[data-theme="dark"] .game-card p{color:var(--muted)}
